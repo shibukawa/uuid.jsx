@@ -8,7 +8,7 @@
  * License: MIT
  */
 
-class _fields.<T>
+class UUIDFields.<T>
 {
     var timeLow : T;
     var timeMid : T;
@@ -62,19 +62,19 @@ class UUID
     var intFields : int[];
 
     /// List of UUID field values (as integer values) by name.
-    var namedIntFields : _fields.<int>;
+    var namedIntFields : UUIDFields.<int>;
 
     /// List of UUID field values (as binary bit string values).
     var bitFields : string[];
 
     /// List of UUID field values by name (as binary bit string values).
-    var namedBitFields : _fields.<string>;
+    var namedBitFields : UUIDFields.<string>;
 
     /// List of UUID field values (as hexadecimal string values).
     var hexFields : string[];
 
     /// List of UUID field values by name(as hexadecimal string values).
-    var namedHexFields : _fields.<string>;
+    var namedHexFields : UUIDFields.<string>;
 
     /// UUID version number defined in RFC 4122.
     var version : int;
@@ -123,11 +123,11 @@ class UUID
     function _init (values : number[]) : void
     {
         this.intFields = [] : int[];
-        this.namedIntFields = new _fields.<int>;
+        this.namedIntFields = new UUIDFields.<int>;
         this.bitFields = [] : string[];
-        this.namedBitFields = new _fields.<string>;
+        this.namedBitFields = new UUIDFields.<string>;
         this.hexFields = [] : string[];
-        this.namedHexFields = new _fields.<string>;
+        this.namedHexFields = new UUIDFields.<string>;
 
         for (var i = 0; i < 6; i++)
         {
